@@ -65,7 +65,10 @@ SELECT COUNT(*) AS total_ratings_records FROM winemag_data_clean;
 SELECT * FROM wine_dataset LIMIT 5;
 SELECT * FROM winemag_data_clean LIMIT 5;
 
--- Calculating average values for every chemical component, grouped by class (cultivar)
+-- 🧪🍷 PART 1: In this part, I calculate average chemical values per class and then create a
+-- table that assigns qualitative level categories to each class.
+
+-- 1. Calculating average values for every chemical component, grouped by class (cultivar)
 
 SELECT
     class,
@@ -80,7 +83,7 @@ FROM wine_dataset
 GROUP BY class
 ORDER BY class;
 
--- Creating a structured table for wine classes with measurable categories
+-- 2. Creating a structured table for wine classes with measurable categories
 
 CREATE TABLE wine_class_characteristics (
     class INT PRIMARY KEY,
@@ -91,7 +94,7 @@ CREATE TABLE wine_class_characteristics (
     color_intensity_level VARCHAR(20)
 );
 
--- Assigning levels to each chemical and mapping them into a table
+-- 3. Assigning levels to each chemical and mapping them into a table
 
 INSERT INTO wine_class_characteristics (class, alcohol_quantity, malic_acid_level, phenols_level, flavanoids_level, color_intensity_level)
 VALUES
@@ -157,7 +160,7 @@ ORDER BY avg_rating DESC;
 SELECT * FROM italian_wine_summary LIMIT 10;
 
 
--- 3. Filter only Piemonte wines
+-- 3. Filtering only Piemonte wines
 
 CREATE OR REPLACE VIEW piemonte_wines AS
 SELECT 
@@ -177,7 +180,7 @@ ORDER BY avg_rating DESC;
 SELECT * FROM piemonte_wines;
 
 
--- 4. Map Piemonte varieties to UCI wine classes
+-- 4. Mapping Piemonte varieties to UCI wine classes
 
 CREATE OR REPLACE VIEW piemonte_class_mapping AS
 SELECT 
@@ -203,7 +206,7 @@ ORDER BY avg_rating DESC;
 SELECT * FROM piemonte_class_mapping;
 
 
--- 5. Rank all Italian wines by average rating
+-- 5. Ranking all Italian wines by average rating
 
 CREATE OR REPLACE VIEW italian_wine_ranked AS
 SELECT 
@@ -223,7 +226,7 @@ ORDER BY rating_rank;
 SELECT * FROM italian_wine_ranked LIMIT 10;
 
 
--- 6. Compare the three classes (Piemonte wines) to all Italian wines by rank; this shows how Nebbiolo, Barbera, and Grignolino rank overall
+-- 6. Comparing the three classes (Piemonte wines) to all Italian wines by rank; this shows how Nebbiolo, Barbera, and Grignolino rank overall
 
 SELECT 
     i.rating_rank,
@@ -245,10 +248,3 @@ SELECT DISTINCT variety
 FROM winemag_data_clean
 WHERE country = 'Italy' AND province LIKE '%Piedmont%'
 ORDER BY variety;
-
-
-
-
-
-
-
