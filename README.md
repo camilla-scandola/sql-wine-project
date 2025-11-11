@@ -1,4 +1,7 @@
-# SQL Wine Study
+# 🍷 SQL Wine Project  
+[The Science Behind Wine](https://docs.google.com/presentation/d/1h3SEF8ikUqUs0xNb5UQ0rbcuz6sclPfLNSgg-Jlq3aA/edit?slide=id.g3a0343450ef_2_75#slide=id.g3a0343450ef_2_75)
+
+
 
 ## Project Overview: 
 The project explores the correlations between the **chemical composition of wines** and their **popularity or perceived quality** among consumers.  
