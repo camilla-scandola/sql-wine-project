@@ -36,7 +36,7 @@ Specifically:
 
 ---
 
-### Approach with SQL
+## Approach with SQL
 
 1. Created a new database (`sql_wine_study`);
 
@@ -54,12 +54,12 @@ Specifically:
 
 ---
 
-**Tables**
+### Tables
 - The UCI Wine dataset (chemical analysis + class labels)
 - The Wine Magazine reviews dataset (geographic + rating + price data)
 - Wine Class Characteristics, which assigns qualitative levels to each class
   
-**Views**
+### Views
 - `italian_wine_summary`: average rating and price grouped by variety and province for Italian wines
 - `piemonte_wines`: subset of Italian wines filtered for Piemonte with average rating and price
 - `piemonte_class_mapping`: Piemonte wines mapped conceptually to UCI wine classes based on grape variety
