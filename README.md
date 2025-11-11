@@ -33,7 +33,5 @@ Specifically:
 - Identify which **chemical properties** are linked to higher or lower likability;  
 - Understand which **characteristics** (e.g., higher alcohol, more flavanoids, stronger color intensity) tend to appear in popular wines
 
-## Note:
-we need to create an extra column on both dataset, and map each cultivar and wine variety to a specific type (full-bodied reds, lights reds, medium/aromatic)
 
 ---
