@@ -38,9 +38,7 @@ Specifically:
 
 ### Approach with SQL
 
-1. Created a new database (`sql_wine_study`) and two tables for:
-  - The UCI Wine dataset (chemical analysis + class labels)
-  - The Wine Magazine reviews dataset (geographic + rating + price data)
+1. Created a new database (`sql_wine_study`);
 
 2. Calculated average chemical component values grouped by wine class to understand the chemical profile of each cultivar;
 
@@ -53,5 +51,18 @@ Specifically:
 6. Focused specifically on Piemonte wines and mapped key grape varieties (Nebbiolo, Barbera, Grignolino) to the UCI wine classes;
 
 7. Ranked all Italian wines by average rating and compared Piemonte varieties to national ranking results.
+
+---
+
+**Tables**
+- The UCI Wine dataset (chemical analysis + class labels)
+- The Wine Magazine reviews dataset (geographic + rating + price data)
+- Wine Class Characteristics, which assigns qualitative levels to each class
+  
+**Views**
+- `italian_wine_summary`: average rating and price grouped by variety and province for Italian wines
+- `piemonte_wines`: subset of Italian wines filtered for Piemonte with average rating and price
+- `piemonte_class_mapping`: Piemonte wines mapped conceptually to UCI wine classes based on grape variety
+- `italian_wine_ranked`: all Italian wines ranked by average rating using `DENSE_RANK()`
 
 ---
